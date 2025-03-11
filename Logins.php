@@ -6,14 +6,13 @@
         protected string $senhas;
     
     
-    
         public function __construct(string $logins, string $senhas) 
         {
             $this->logins = $logins;
             $this->senhas = $senhas;
         }
 
-        public function __get(string $dado):mixed
+        public function __get(string $dados):mixed
         {
             return $this->dados;
         }
@@ -25,9 +24,8 @@
 
         public function imprimir():string
         {
-            return
-                    "<br>Login: ".$this->logins.
-                    "<br>Senha: ".$this->senhas;
+            return "<br>Login: ".$this->logins.
+                   "<br>Senha: ".$this->senhas;
         }
     }
 ?>

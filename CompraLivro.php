@@ -8,44 +8,43 @@
 
    class CompraLivro{
         private Cadastrar $cadastroCliente;
-        private CadastrarLivros $livro;
+        private CadastrarLivros $livros;
         private string $cartao;
         private string $dataCompra;
 
 
-        public function __construct (Cadastrar $cadastroCliente,
+        public function __construct(Cadastrar $cadastroCliente,
                                     CadastrarLivros $livros, 
                                     string $cartao, 
                                     string $dataCompra)
            
         {
-                $this->cadastroCliente = $cadastroCliente;
-                $this->livros = $livros;
-                $this->cartao = $cartao;
-                $this->dataCompra = $dataCompra;
+            $this->cadastroCliente = $cadastroCliente;
+            $this->livros = $livros;
+            $this->cartao = $cartao;
+            $this->dataCompra = $dataCompra;
         }
 
-       public function __get(string $dado):mixed
-             {
-                 return $this->dados;
-             }
+        public function __get(string $dados):string
+        {
+            return $this->dados;
+        }
      
         public function __set(string $variavel, string $dados):void
-             {
-                 $this->variavel = $dados;
-             }
+        {
+            $this->variavel = $dados;
+        }
 
         public function imprimir():string
-             {
-                 return
-                         "<br>Cadastro Cliente: ".$this->cadastroCliente.
-                         "<br>Seu livro é: ".$this->livro.
-                         "<br>Forma de pagamento: ".$this->cartao.
-                         "<br>Data da sua Compra: ".$this->dataCompra;
+        {
+            return "<br>Cadastro Cliente: ".$this->cadastroCliente->imprimir().
+                    "<br>Seu livro é: ".$this->livros->imprimir().
+                    "<br>Forma de pagamento: ".$this->cartao.
+                    "<br>Data da sua Compra: ".$this->dataCompra;
                        
-             }        
+        }        
 
-   }
+   }//fim da classe
 
 
 

@@ -11,7 +11,8 @@
 
 
         public function __construct(string $nome,
-        string $endereco,string $telefone,string $dataNascimento,string $login, string $senha) 
+        string $endereco,string $telefone,string $dataNascimento,string $login, string $senha)
+         
         {
             $this->nome = $nome;
             $this->endereco = $endereco;
@@ -21,7 +22,7 @@
             $this->senha = $senha;
         }
 
-        public function __get(string $dado):mixed
+        public function __get(string $dados):mixed
         {
             return $this->dados;
         }
@@ -34,12 +35,11 @@
 
         public function imprimir():string
         {
-            return
-                    "<br>Nome:"     .$this->nome.
+            return  "<br>Nome:"     .$this->nome.
                     "<br>Endereco:" .$this->endereco.
                     "<br>Telefone:" .$this->telefone.
                     "<br>Data de Nascimento:" .$this->dataNascimento.
-                    "<br>Longin:" .$this->login.
+                    "<br>Login:" .$this->login.
                     "<br>Senha:" .$this->senha;
         }
     }
