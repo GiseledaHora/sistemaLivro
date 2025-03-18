@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Site do livro</title>
+    <style>
+        /* Para garantir que a navbar não sobreponha o conteúdo */
+        body {
+            background-color: rgb(246, 126, 190);
+            padding-top: 80px; /* Ajuste o valor conforme necessário */
+        }
+
+        /* Flexbox para centralizar as imagens dos livros */
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .book {
+            text-align: center;
+            width: 200px;
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Centralizar o título e categorias */
+        .EscolhaLivros, .explore {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .categorias {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .categorias a {
+            margin: 0 10px;
+        }
+        .carousel-item img {
+        height: 550px; /* Defina a altura desejada */
+        width: auto; /* Mantém a proporção original */
+        object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+
+        .navbar {
+     background-color: #EC407A !important; /* Navbar rosa médio */
+        }
+}
+
+    </style>
+</head>
+<body>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="main.php">
+            <img src="Imagens/logo.png" alt="Logo" style="width: 50px; height: auto;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="main.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Livros.php">Livros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="SobreNos.php">Sobre-nós</a>
+                </li>
+            </ul>
+            <form class="d-flex ms-0" role="search">
+                <input class="form-control me-1" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="width: 400px;">
+                <button class="btn btn-outline-success ms-0" type="submit">Pesquisar</button>
+                <button class="btn btn-outline-primary ms-3" type="button" onclick="window.location.href='TelaLogin.php'">Login</button>
+                <button class="btn btn-outline-secondary ms-2" type="button" onclick="window.location.href='TelaRegistrarse.php'">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Imagens/banner1.png" class="d-block w-100" alt="banner1" style="width: 50px">
+        <div class="carousel-caption d-none d-md-block">
+         
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Imagens/banner2.png" class="d-block w-100" alt="banner2" style="width: 300px;">
+        <div class="carousel-caption d-none d-md-block">
+        
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="Imagens/banner3.png" class="d-block w-100" alt="banner3" style="width: 300px">
+        <div class="carousel-caption d-none d-md-block">
+          
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<h2 class="EscolhaLivros">Livros</h2>
+
+<div class="book-list">
+    <div class="book">
+        <img src="imagens/romance4.jpg" alt="Delicious Receitas" style="width: 162px;">
+        <p>R$ 59,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/conto5.png" alt="Fan Histories"  style="width: 162px;">
+        <p>R$ 100,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/fic2.jpg" alt="Fanfic Stofid"  style="width: 162px;">
+        <p>R$ 150,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/ficcao2.png" alt="Sixaton Fiction" style="width: 160px;" >
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/romance1.jpg" alt="Fanfic Stofid" style="width: 160px;">
+        <p>R$ 150,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/tec1.jpg" alt="Sixaton Fiction" style="width: 160px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/conto2.jpg" alt="Fanfic Stofid" style="width: 150px;">
+        <p>R$ 150,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/fic3.jpg" alt="Sixaton Fiction" style="width: 150px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/romance2.jpg" alt="Sixaton Fiction" style="width: 150px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/fic5.jpg" alt="Sixaton Fiction" style="width: 150px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/romance6.jpg" alt="Sixaton Fiction" style="width: 150px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+    <div class="book">
+        <img src="Imagens/tec6.jpg  " alt="Sixaton Fiction" style="width: 150px;">
+        <p>R$ 120,99</p>
+        <button>Comprar</button>
+    </div>
+
+</div>
+
+<footer class="bg-primary text-white text-center text-lg-start">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Gi Livraria</h5>
+  
+          <p>
+            <br>Bem-vindo à nossa Gi Livraria!<br>
+
+            Aqui, cada página vira uma nova aventura! Explore nosso acervo repleto de romances apaixonantes, histórias de ficção envolventes, contos inspiradores e muito mais. Seja para aprender, sonhar ou se emocionar, temos o livro perfeito para você.  
+            
+            Sinta-se em casa e aproveite sua jornada literária!<br> 
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Conta</h5>
+  
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Criar Conta</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Login</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Redes Sociais</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-white">Instagram</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Facebook</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">X</a>
+            </li>
+           
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2025 Gi Livrarira
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</body>
+</html>
